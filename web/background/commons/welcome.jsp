@@ -157,7 +157,7 @@
                 </tr>
                 <tr>
                     <th>开发者</th>
-                    <td>李庚星(357586664@qq.com)</td></tr>
+                    <td>许彦磊(857534396@qq.com)</td></tr>
                 </tbody>
             </table>
         </div>

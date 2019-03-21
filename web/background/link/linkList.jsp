@@ -28,7 +28,7 @@
 <div class="x-nav">
       <span class="layui-breadcrumb">
         <a href="#"><cite>首页</cite></a>
-        <a><cite>友情链接维护</cite></a>
+        <a href="#"><cite>友情链接维护</cite></a>
       </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
@@ -78,7 +78,12 @@
     </table>
     <div class="page">
         <div>
-            <a class="prev" href="">&lt;&lt;</a>
+            <c:if test="${pageBean.pageIndex<=1}">
+                <a class="prev" href="">&lt;&lt;</a>
+            </c:if>
+            <c:if test="${pageBean.pageIndex>1}">
+                <a class="prev" href="<%=request.getContextPath()%>/LinkServlet?action=query&pageIndex=${pageBean.pageIndex-1}">&lt;&lt;</a>
+            </c:if>
             <c:forEach var="i" begin="1" step="1" end="${pageBean.pages}">
                 <c:if test="${pageBean.pageIndex==i}">
                     <span class="current">${i}</span>
@@ -87,10 +92,14 @@
                     <a class="num" href="<%=request.getContextPath()%>/LinkServlet?action=query&pageIndex=${i}">${i}</a>
                 </c:if>
             </c:forEach>
-            <a class="next" href="">&gt;&gt;</a>
+            <c:if test="${pageBean.pageIndex<pageBean.pages}">
+                <a class="next" href="<%=request.getContextPath()%>/LinkServlet?action=query&pageIndex=${pageBean.pageIndex+1}">&gt;&gt;</a>
+            </c:if>
+            <c:if test="${pageBean.pageIndex>=pageBean.pages}">
+                <a class="next" href="">&gt;&gt;</a>
+            </c:if>
         </div>
     </div>
-
 </div>
 <script>
     layui.use('laydate', function(){

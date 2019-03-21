@@ -43,7 +43,7 @@
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
                 <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
                 <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
-                <dd><a href="./login.html">退出</a></dd>
+                <dd><a href="./login.jsp">退出</a></dd>
             </dl>
         </li>
         <li class="layui-nav-item to-index"><a href="<%=request.getContextPath()%>/goIndex">前台首页</a></li>
@@ -138,7 +138,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="cate.html">
+                        <a _href="<%=request.getContextPath()%>/background/NewsType/typeList.jsp">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>新闻分类维护</cite>
                         </a>
@@ -159,7 +159,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="city.html">
+                        <a _href="<%=request.getContextPath()%>/CommmentServlet?action=query">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>评论信息维护</cite>
                         </a>
